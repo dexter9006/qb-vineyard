@@ -54,7 +54,7 @@ local grapeLocations = {
 local function log(debugMessage)
 	print(('^6[^3qb-vineyard^6]^0 %s'):format(debugMessage))
 end
-
+local blips
 local function CreateBlip()
 	if tasking then
 		blip = AddBlipForCoord(grapeLocations[random].x,grapeLocations[random].y,grapeLocations[random].z)
@@ -65,7 +65,24 @@ local function CreateBlip()
     BeginTextCommandSetBlipName("STRING")
     AddTextComponentString("Drop Off")
     EndTextCommandSetBlipName(blip)
+	SetNewWaypoint(grapeLocations[random].x,grapeLocations[random].y)
 end
+
+CreateThread(function()
+	while true do
+		Wait(0)
+		if DoesBlipExist(blip) then
+			if random ~= 0 then
+				DrawMarker(32, 
+				grapeLocations[random].x,
+				grapeLocations[random].y,
+				grapeLocations[random].z, 
+				0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 238, 130, 138, 50, false, true, 2, false, nil, nil, false)
+			end
+		end
+
+	end
+end)
 
 local function nextTask()
 	if tasking then
