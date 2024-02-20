@@ -10,6 +10,7 @@ local Translations = {
     },
     task = {
         ["start_task"] = "[E] pour Démarrer",
+        ["stop_task"] = "[E] pour Arrêter la récolte",
         ["load_ingrediants"] = "[E] Chargement des ingredients",
         ["wine_process"] = "[E] Démarrage du traitement du vin",
         ["get_wine"] = "[E] Récupérer vin",
