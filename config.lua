@@ -1,10 +1,10 @@
 Config = {
 	Debug = false,
-	PickAmount = {min = 8, max = 12},
-	GrapeAmount = {min = 8, max = 12},
-	GrapeJuiceAmount = {min = 6, max = 10},
-	WineAmount = {min = 6, max = 10},
-	wineTimer = 180,
+	PickAmount = {min = 8, max = 12}, -- nb de recolte pour un run
+	GrapeAmount = {min = 8, max = 12}, -- nb de raisin par recolte
+	GrapeJuiceAmount = {min = 6, max = 10}, -- nb de jus obtenu /16 pris
+	WineAmount = {min = 6, max = 10}, -- nb de vin obtenu /23 pris
+	wineTimer = 20, -- 180 secondes 
 	Vineyard = {
 		start ={
 			coords = vector3(-1928.81, 2059.53, 140.84),
@@ -37,6 +37,9 @@ Config = {
 			},
 			minZ=139,
 			maxZ=141
+		},
+		blips = {
+			coords = vector3(-1928.81, 2059.53, 140.84),
 		}
 	}
 }
